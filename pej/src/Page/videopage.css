@@ -1,0 +1,124 @@
+.video {
+    /*border: solid 2px red;*/
+    margin-left: 17%;
+    width: 65%;
+    height: 600px;
+    margin-top: 10px;
+}
+
+.videogrief {
+    /*border: solid 2px red;*/
+    width: 45%;
+    height: 350px;
+    margin-top: 10px;
+}
+
+.videogriefbox {
+    /*border: solid 2px orangered;*/
+    margin-left: 17%;
+    width: 65%;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.videotitle {
+    /*border: 2px solid blue;*/
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: italic;
+    color: white;
+}
+
+.subvideotitle {
+    /*border: 2px solid blue;*/
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+.videodesc {
+   /*border: solid 2px green;*/
+    display: flex;
+    padding-left: 20%;
+    color: white;
+}
+
+.videodesc div {
+    /*border: solid 2px yellow;*/
+}
+
+.videodesc div p {
+    margin-bottom: -5px;
+    height: 10px;
+    font-size: 12px;
+    /*border: solid 2px orange;*/
+}
+
+.videodescbox1 {
+    text-align: end;
+    padding-right: 5px;
+}
+
+.videodescbox2 {
+    text-align: start;
+    padding-left: 5px;
+}
+
+.prizebox {
+    /*border: solid 2px red;*/
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.prize {
+    /*border: solid 2px yellow;*/
+    width: 20%;
+    margin: 20px;
+}
+
+.prize img {
+    width: 100%;
+    /*border: solid 1px lightgrey;*/   
+}
+
+.prizecube {
+    /*filter: grayscale(50%) brightness(10%) sepia(700%) hue-rotate(-180deg) saturate(700%) contrast(0.6);*/
+    /*filter: grayscale(50%) brightness(10%) sepia(700%) hue-rotate(-180deg) saturate(700%) contrast(0.6);*/
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .video {
+        width: 98%;   
+        margin-left: 1%;
+        height: 200px;
+    }
+
+    .prizebox {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .prize {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .videogriefbox {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .videogrief {
+        width: 100%;
+        height: 200px;
+    }
+}
+

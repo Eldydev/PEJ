@@ -1,0 +1,61 @@
+.formdiv {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
+}
+
+.formbox {
+    height: 250px;
+    display: flex;
+    justify-content: center;
+}
+
+.ownerdiv {
+    margin-left: 2%;
+    height: 90%;
+    color: white;
+    width: 45%;
+    margin-right: 4%;
+}
+
+.ownerdiv div {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.infobox {
+    height: 40px;
+}
+
+.inputdiv {
+    height: 90%;
+    color: white;
+    width: 45%;
+    display: flex;
+    margin-right: 2%;
+}
+.inputdiv div {
+    width: 48%;
+}
+.inputdiv div input {
+    height: 30px;
+    width: 90%;
+    margin-left: 2%;
+    margin-bottom: 15px;
+}
+
+textarea {
+    height: 130px;
+    width: 90%;
+    margin-left: 3%;
+}
+
+form {
+    margin-top: 100px;
+    height: 100vh;
+}
+
+

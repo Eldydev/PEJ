@@ -1,0 +1,19 @@
+.logo {
+    width: 30px;
+    height: 30px;
+    margin: 30px;
+    filter: invert(100%);
+}
+
+.logo:hover {
+    filter: invert(50%);
+}
+
+#footer {
+    padding-top: 5%;
+    padding-bottom: 5%; 
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    justify-content: center;
+}

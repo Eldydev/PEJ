@@ -1,0 +1,42 @@
+.miniaturesbox {
+    /*border: solid 2px red;*/
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.miniatures {
+    /*border: solid 2px yellow;*/
+    width: 25%;
+    margin: 20px;
+    box-shadow: 1px 1px 1px 1px black;
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .miniatures {
+        width: 98%;
+    }
+
+    .miniaturesbox {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+.miniatures img {
+    width: 100%;
+    border: solid 1px lightgrey;
+}
+
+.miniaturestitle {
+    margin-top: -5px;
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    border: solid 1px lightgrey;
+    color: black;
+}
+

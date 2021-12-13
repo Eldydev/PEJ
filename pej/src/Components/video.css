@@ -1,0 +1,22 @@
+.homevideo {
+    /*border: solid 2px red;*/
+    width: 49%;
+    margin-top: 10px;
+}
+
+.videobox {
+    /*border: solid 2px black;*/
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.controlbar {
+    display: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .homevideo {
+        width: 98%;
+    }
+}

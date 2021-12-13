@@ -1,0 +1,55 @@
+.own {
+    position: fixed;
+    top: 40%;
+    left:33%;
+    transition-timing-function: ease-in;
+    transition: 0.3s;
+    opacity: 0;
+    /*border: solid 2px blue;*/
+    width: 35%;
+    font-style: italic;
+    text-align: center;
+    
+}
+
+@media screen and (min-width: 600px) and (max-width: 1400px) {
+    
+    .own {
+        width: 50%;
+        left: 25%;
+        
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 599px) {
+    
+    .own {
+        width: 90%;
+        left: 5%;
+        top: 25%;
+    }
+
+    .owner {
+        font-size: 15px;
+    }
+    
+    .ownerTitle {
+        font-size: 12px;
+    }
+}
+
+.own__blue {
+    color:white;
+    opacity: 1;
+
+}
+
+.owner {
+    font-size: 45px;
+    color: white;
+    font-weight: bold;
+}
+
+.ownerTitle {
+    font-size: 35px;
+}

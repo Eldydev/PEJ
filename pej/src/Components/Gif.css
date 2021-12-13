@@ -1,0 +1,31 @@
+.gifbox {
+    /*border: solid 2px red;*/
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.gif {
+    /*border: solid 2px yellow;*/
+    width: 20%;
+    margin: 20px;
+}
+
+.gif img {
+    width: 100%;
+    border: solid 1px lightgrey;
+}
+
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .gifbox {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .gif {
+        width: 35%;
+    }
+}
