@@ -183,6 +183,21 @@ class Videos extends Component {
         video.load()
     }
 
+    handleTouchStart(id) {
+        var video = document.getElementById(id).children[0].children[0]
+        console.log("in :" + id )
+        console.log("handletouchstart" )
+        video.play()
+    }
+
+    handleTouchEnd(id) {
+        var video = document.getElementById(id).children[0].children[0]
+        console.log("out :" + id )
+        console.log("handletouchend" )
+        video.pause()
+        video.load()
+    }
+
     render() {
         return (
             <div className="videobox">
@@ -193,8 +208,8 @@ class Videos extends Component {
                             id={data.id}
                             onMouseEnter={e => this.PlayVideo(data.id)}
                             onMouseLeave={e => this.StopVideo(data.id)}
-                            onTouchStart={e => this.PlayVideo(data.id) }
-                            onTouchEnd={e => this.StopVideo(data.id)}
+                            onTouchStart={e => this.handleTouchStart(data.id) }
+                            onTouchEnd={e => this.handleTouchEnd(data.id)}
                             
                             >
                             <Player
