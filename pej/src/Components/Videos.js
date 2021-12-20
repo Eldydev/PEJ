@@ -172,12 +172,12 @@ class Videos extends Component {
     }
 
     PlayVideo(id) {
-        var video = document.getElementById(id).children[0].children[0].children[0]
+        var video = document.getElementById(id).children[0].children[0]
         console.log(id)
         video.play()
     }
     StopVideo(id) {
-        var video = document.getElementById(id).children[0].children[0].children[0]
+        var video = document.getElementById(id).children[0].children[0]
         console.log("out :" + id )
         video.pause()
         video.load()
@@ -197,7 +197,6 @@ class Videos extends Component {
                             onTouchEnd={e => this.StopVideo(data.id)}
                             
                             >
-                            <a href={data.url}>  
                             <Player
                                 fluid
                                 src={data.src}
@@ -207,7 +206,6 @@ class Videos extends Component {
                                 <ControlBar autoHide={false} className="controlbar"/>
                                 <BigPlayButton position="center" className="playbutton" />
                             </Player>
-                            </a>  
                         </div>
                     )
                 })}
