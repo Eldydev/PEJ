@@ -37,3 +37,11 @@
 .EnterButton :hover {
     background-color: navy;
 }
+
+@media screen and (min-width: 300px) and (max-width: 599px) {
+    
+    .EnterButton {
+        width: 30%;
+        left: 35%;
+    }
+}

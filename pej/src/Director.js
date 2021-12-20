@@ -18,7 +18,6 @@ class Director extends Component {
             <div>
                 <Header />
                 <Videos />
-                <Miniatures />
                 <Footer />
             </div>
         );

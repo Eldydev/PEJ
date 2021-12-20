@@ -167,6 +167,10 @@ class Videos extends Component {
         };
     }
 
+    componentWillUnmount() {
+        React.initializeTouchEvents(true);
+    }
+
     PlayVideo(id) {
         var video = document.getElementById(id).children[0].children[0].children[0]
         console.log(id)
@@ -189,6 +193,8 @@ class Videos extends Component {
                             id={data.id}
                             onMouseEnter={e => this.PlayVideo(data.id)}
                             onMouseLeave={e => this.StopVideo(data.id)}
+                            onTouchStart={e => this.PlayVideo(data.id) }
+                            onTouchEnd={e => this.StopVideo(data.id)}
                             
                             >
                             <a href={data.url}>  
