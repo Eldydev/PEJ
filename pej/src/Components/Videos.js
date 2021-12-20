@@ -163,7 +163,8 @@ class Videos extends Component {
                     img: underworld_image,
                     url: "/underworld"
                 },
-            ]
+            ],
+            VideoPlay: false
         };
     }
 
@@ -184,18 +185,23 @@ class Videos extends Component {
     }
 
     handleTouchStart(id) {
-        var video = document.getElementById(id).children[0].children[0]
-        console.log("in :" + id )
-        console.log("handletouchstart" )
-        video.play()
-    }
-
-    handleTouchEnd(id) {
-        var video = document.getElementById(id).children[0].children[0]
-        console.log("out :" + id )
-        console.log("handletouchend" )
-        video.pause()
-        video.load()
+        var VideoPlay = this.state.VideoPlay
+        if(VideoPlay === false) {
+            var video = document.getElementById(id).children[0].children[0]
+            console.log("in :" + id )
+            console.log("handletouchstart" )
+            video.play()
+            this.setState({VideoPlay:true})
+        }
+        if (VideoPlay === true) {
+            var video = document.getElementById(id).children[0].children[0]
+            console.log("out :" + id )
+            console.log("handletouchend" )
+            video.pause()
+            video.load()
+            this.setState({VideoPlay:false})
+        }
+ 
     }
 
     render() {
@@ -209,7 +215,6 @@ class Videos extends Component {
                             onMouseEnter={e => this.PlayVideo(data.id)}
                             onMouseLeave={e => this.StopVideo(data.id)}
                             onTouchStart={e => this.handleTouchStart(data.id) }
-                            onTouchEnd={e => this.handleTouchEnd(data.id)}
                             
                             >
                             <Player
