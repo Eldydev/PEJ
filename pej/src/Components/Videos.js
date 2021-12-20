@@ -173,35 +173,39 @@ class Videos extends Component {
     }
 
     PlayVideo(id) {
-        var video = document.getElementById(id).children[0].children[0]
+        var video = document.getElementById(id).children[0].children[0].children[0]
         console.log(id)
         video.play()
     }
     StopVideo(id) {
-        var video = document.getElementById(id).children[0].children[0]
-        console.log("out :" + id )
+        var video = document.getElementById(id).children[0].children[0].children[0]
+        console.log("out :" + id)
         video.pause()
         video.load()
     }
 
     handleTouchStart(id) {
         var VideoPlay = this.state.VideoPlay
-        if(VideoPlay === false) {
-            var video = document.getElementById(id).children[0].children[0]
-            console.log("in :" + id )
-            console.log("handletouchstart" )
+        if (VideoPlay === false) {
+            var video = document.getElementById(id).children[0].children[0].children[0]
+            console.log("in :" + id)
+            console.log("handletouchstart")
             video.play()
-            this.setState({VideoPlay:true})
+            this.setState({ VideoPlay: true })
         }
         if (VideoPlay === true) {
-            var video = document.getElementById(id).children[0].children[0]
-            console.log("out :" + id )
-            console.log("handletouchend" )
+            var video = document.getElementById(id).children[0].children[0].children[0]
+            console.log("out :" + id)
+            console.log("handletouchend")
             video.pause()
             video.load()
-            this.setState({VideoPlay:false})
+            this.setState({ VideoPlay: false })
         }
- 
+
+    }
+
+    GotoVideoPage(url) {
+        this.props.history.push(url)
     }
 
     render() {
@@ -209,23 +213,25 @@ class Videos extends Component {
             <div className="videobox">
                 {this.state.videos.map((data, i) => {
                     return (
-                        <div className="homevideo" 
-                            key={i} 
+                        <div className="homevideo"
+                            key={i}
                             id={data.id}
                             onMouseEnter={e => this.PlayVideo(data.id)}
                             onMouseLeave={e => this.StopVideo(data.id)}
-                            onTouchStart={e => this.handleTouchStart(data.id) }
-                            
-                            >
-                            <Player
-                                fluid
-                                src={data.src}
-                                loop="true"
-                                poster={data.img}
+                            onTouchStart={e => this.handleTouchStart(data.id)}
+
+                        >
+                            <a href={data.url}>
+                                <Player
+                                    fluid
+                                    src={data.src}
+                                    loop="true"
+                                    poster={data.img}
                                 >
-                                <ControlBar autoHide={false} className="controlbar"/>
-                                <BigPlayButton position="center" className="playbutton" />
-                            </Player>
+                                    <ControlBar autoHide={false} className="controlbar" />
+                                    <BigPlayButton position="center" className="playbutton" />
+                                </Player>
+                            </a>
                         </div>
                     )
                 })}
