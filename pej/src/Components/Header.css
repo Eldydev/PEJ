@@ -1,6 +1,6 @@
 #header {
     display:flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     /*border: solid 2px yellow;*/
     padding: 10px;
     font-weight: bold;
@@ -13,6 +13,11 @@
     display: flex;
     text-decoration: none;
     align-items: center;
+    background-image: url("../IMG/Menu/Menu.png");
+    background-size: contain;
+    width: 600px;
+    height: 60px;
+    align-self: flex-end;
 }
 
 @media screen and (min-width: 600px) {
@@ -31,6 +36,7 @@
         height: 100vh;
         width: 100%;
         background-color: black;
+        background-image: none;
         z-index: 1000;
         position: fixed;
         top: 0;
@@ -56,8 +62,6 @@
 .link {
     text-align: center;
     color: black;
-    margin-left: 20px;
-    margin-right: 20px;
     /*border: solid 2px blue;*/
     color: white;
 }
@@ -99,4 +103,23 @@ a {
     margin-left: 85%;
     -webkit-filter: grayscale(1) invert(1);
     filter: grayscale(1) invert(1);
+}
+
+.Menuimg {
+    width: 100%;
+    height: 40px;
+} 
+
+#director {
+    width: 150px;
+    margin-left: 33px;
+    margin-right: 20px;
+}
+
+#gif {
+    margin-right: 15px;
+}
+
+#motion {
+    margin-right: 20px;
 }

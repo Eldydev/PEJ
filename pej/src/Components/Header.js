@@ -3,63 +3,116 @@ import { useLocation, Link } from "react-router-dom";
 
 import menu_icon_black from "../IMG/menu_icon_black.png"
 import cross_icon_black from "../IMG/cross_icon_black.png"
+import Contact01 from "../IMG/Menu/Contact01.png"
+import Contact02 from "../IMG/Menu/Contact02.png"
+import Director01 from "../IMG/Menu/Director01.png"
+import Director02 from "../IMG/Menu/Director02.png"
+import Gif01 from "../IMG/Menu/Gif01.png"
+import Gif02 from "../IMG/Menu/Gif02.png"
+import Menu from "../IMG/Menu/Menu.png"
+import Motion01 from "../IMG/Menu/Motion01.png"
+import Motion02 from "../IMG/Menu/Motion02.png"
 import "./Header.css"
 
 class Header extends Component {
   constructor() {
     super();
     this.state = {
+      gif: Gif01,
+      director: Director01,
+      motion: Motion01,
+      contact: Contact01
     };
   }
 
-  MenuDisplay () {
+  MenuDisplay() {
     var menu = document.getElementById("linkdiv")
-    menu.style.display ="flex"
-    
+    menu.style.display = "flex"
+
   }
 
-  MenuDisplayNone () {
+  MenuDisplayNone() {
     var menu = document.getElementById("linkdiv")
-    menu.style.display = "none"    
+    menu.style.display = "none"
+  }
+
+  RolloverGif() {
+    this.setState({ gif: Gif02 })
+  }
+
+  RolloverGif2() {
+    this.setState({ gif: Gif01 })
+  }
+
+  RolloverDirector() {
+    this.setState({ director: Director02 })
+  }
+
+  RolloverDirector2() {
+    this.setState({ director: Director01 })
+  }
+
+  RolloverContact() {
+    this.setState({ contact: Contact02 })
+  }
+
+  RolloverContact2() {
+    this.setState({ contact: Contact01 })
+  }
+
+  RolloverMotion() {
+    this.setState({ motion: Motion02 })
+  }
+
+  RolloverMotion2() {
+    this.setState({ motion: Motion01 })
   }
 
 
   render() {
     return (
       <div id="header">
-        <div className ="HeaderOwner">
-          <p className="HeaderName">PIERRE EDOUARD JOUBERT</p>
-          <p className="HeaderTitle">DIRECTOR</p>
-        </div>
         <div id="linkdiv">
-          <img className="menucross" src={cross_icon_black} onClick={(e) => this.MenuDisplayNone()}/>
-          <Link
+          <img className="menucross" src={cross_icon_black} onClick={(e) => this.MenuDisplayNone()} />
+          <Link className='link' id="director"
             to={{
               pathname: '/director'
             }}
           >
-            <p className="link">DIRECTOR</p>
+            <img className='Menuimg' src={this.state.director}
+              onMouseEnter={e => this.RolloverDirector()}
+              onMouseLeave={e => this.RolloverDirector2()}
+            />
           </Link>
-          <Link
+          <Link className='link' id="gif"
             to={{
               pathname: '/gif'
             }}
           >
-            <p className="link">GIF</p>
+            <img className='Menuimg' src={this.state.gif}
+              onMouseEnter={e => this.RolloverGif()}
+              onMouseLeave={e => this.RolloverGif2()}
+            />
           </Link>
-          <Link
+          <Link className='link' id="motion"
             to={{
               pathname: '/motiondesign'
             }}
           >
-            <p className="link">MOTION DESIGN</p>
+            <img className='Menuimg' src={this.state.motion}
+              onMouseEnter={e => this.RolloverMotion()}
+              onMouseLeave={e => this.RolloverMotion2()}
+            />
           </Link>
-          <Link
+          <Link className='link' id="contact"
             to={{
               pathname: '/contact'
             }}
           >
-            <p className="link">CONTACT</p>
+            <img className='Menuimg' src={this.state.contact}
+              onMouseEnter={e => this.RolloverContact()}
+              onMouseLeave={e => this.RolloverContact2()}
+            />
           </Link>
         </div>
         <img className="logomenu" onClick={(e) => this.MenuDisplay()} src={menu_icon_black} />
@@ -69,3 +122,8 @@ class Header extends Component {
 }
 
 export default Header
+
+/*<div className ="HeaderOwner">
+<p className="HeaderName">PIERRE EDOUARD JOUBERT</p>
+<p className="HeaderTitle">DIRECTOR</p>
+</div>*/
