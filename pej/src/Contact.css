@@ -11,6 +11,16 @@
     height: 250px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    padding-left: 20%;
+
+}
+
+#contactcatch {
+    color: white;
+    width: 80%;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .ownerdiv {
@@ -30,16 +40,29 @@
     height: 40px;
 }
 
+.logobox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
 .inputdiv {
     height: 90%;
     color: white;
-    width: 45%;
+    width: 80%;
     display: flex;
     margin-right: 2%;
 }
-.inputdiv div {
-    width: 48%;
+.inputbox {
+    width: 30%;
+
 }
+
+.textbox {
+    width: 50%;
+}
+
 .inputdiv div input {
     height: 30px;
     width: 90%;
@@ -49,13 +72,18 @@
 
 textarea {
     height: 130px;
-    width: 90%;
-    margin-left: 3%;
+    width: 100%;
 }
 
 form {
     margin-top: 100px;
     height: 100vh;
+}
+
+.Conlogo {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
 }
 
 

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Vimeo from '@u-wave/react-vimeo';
-import ReactPlayer from "react-player"
+import ReactPlayer from "react-player";
+import { Redirect } from 'react-router'
 import { Player, ControlBar, BigPlayButton } from 'video-react';
-import { useLocation, Link, useHistory } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
+import Hammer from "rc-hammerjs";
 
 import extrait_adidas from ".././Preview/extrait_adidas.mp4"
 import extrait_agaag from ".././Preview/extrait_agaag.mp4"
@@ -94,13 +96,13 @@ class Videos extends Component {
                 {
                     id: "prev7",
                     src: extrait_eleven02,
-                    img: "",
+                    img: zoe_image,
                     url: "/eleven2"
                 },
                 {
                     id: "prev8",
                     src: extrait_eleven03,
-                    img: "",
+                    img: richards_image,
                     url: "/eleven3"
                 },
                 {
@@ -164,12 +166,26 @@ class Videos extends Component {
                     url: "/underworld"
                 },
             ],
-            VideoPlay: false
+            VideoPlay: false,
+            with: 0,
+            height: 0,
+            redirect: false,
+            url: ""
         };
+        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    }
+
+    componentDidMount() {
+        this.updateWindowDimensions();
+        window.addEventListener('resize', this.updateWindowDimensions);
     }
 
     componentWillUnmount() {
-        React.initializeTouchEvents(true);
+        window.removeEventListener('resize', this.updateWindowDimensions);
+    }
+
+    updateWindowDimensions() {
+        this.setState({ width: window.innerWidth, height: window.innerHeight });
     }
 
     PlayVideo(id) {
@@ -199,6 +215,7 @@ class Videos extends Component {
             console.log("handletouchend")
             video.pause()
             video.load()
+            this.setState({ url: ""})
             this.setState({ VideoPlay: false })
         }
 
@@ -208,32 +225,89 @@ class Videos extends Component {
         this.props.history.push(url)
     }
 
+    handleTap(id) {
+        console.log('tap')
+        var VideoPlay = this.state.VideoPlay
+        if (VideoPlay === false) {
+            var video = document.getElementById(id).children[0].children[0]
+            console.log("in :" + id)
+            console.log("handletouchstart")
+            video.play()
+            this.setState({ VideoPlay: true })
+        }
+        if (VideoPlay === true) {
+            var video = document.getElementById(id).children[0].children[0]
+            console.log("out :" + id)
+            console.log("handletouchend")
+            video.pause()
+            video.load()
+            this.setState({ VideoPlay: false })
+        }
+    }
+
+    handleDoubleTap(url) {
+        console.log('doubletap', url);
+        this.setState({ url: url})
+        this.setState({ redirect: true})
+    }
+
     render() {
+        console.log('width :', this.state.width, 'height  :', this.state.height)
+        if (this.state.redirect === true) {
+            return <Redirect to={this.state.url}/>;
+          }
         return (
             <div className="videobox">
                 {this.state.videos.map((data, i) => {
-                    return (
-                        <div className="homevideo"
-                            key={i}
-                            id={data.id}
-                            onMouseEnter={e => this.PlayVideo(data.id)}
-                            onMouseLeave={e => this.StopVideo(data.id)}
-                            onTouchStart={e => this.handleTouchStart(data.id)}
+                    if (this.state.width < 500) {
+                        return (
+                            <div className="homevideo"
+                                key={i}
+                                id={data.id}
 
-                        >
-                            <a href={data.url}>
-                                <Player
-                                    fluid
-                                    src={data.src}
-                                    loop="true"
-                                    poster={data.img}
-                                >
-                                    <ControlBar autoHide={false} className="controlbar" />
-                                    <BigPlayButton position="center" className="playbutton" />
-                                </Player>
-                            </a>
-                        </div>
-                    )
+                            >
+                                <Hammer
+                                    onTap={e => this.handleTap(data.id)}
+                                    onDoubleTap={e => this.handleDoubleTap(data.url)}>
+                                        <Player
+                                            fluid
+                                            src={data.src}
+                                            loop={true}
+                                            poster={data.img}
+                                        >
+                                            <ControlBar autoHide={false} className="controlbar" />
+                                            <BigPlayButton position="center" className="playbutton" />
+                                        </Player>
+                                </Hammer>
+                            </div>
+                        )
+
+                    }
+                    else {
+                        return (
+                            <div className="homevideo"
+                                key={i}
+                                id={data.id}
+
+                                onMouseEnter={e => this.PlayVideo(data.id)}
+                                onMouseLeave={e => this.StopVideo(data.id)}
+                            >
+                                    <a href={data.url}>
+                                        <Player
+                                            fluid
+                                            src={data.src}
+                                            loop={true}
+                                            poster={data.img}
+                                        >
+                                            <ControlBar autoHide={false} className="controlbar" />
+                                            <BigPlayButton position="center" className="playbutton" />
+                                        </Player>
+                                    </a>
+                            </div>
+
+                        )
+                    }
+
                 })}
             </div>
         );

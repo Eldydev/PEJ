@@ -29,7 +29,7 @@ class Header extends Component {
       <div id="header">
         <div className ="HeaderOwner">
           <p className="HeaderName">PIERRE EDOUARD JOUBERT</p>
-          <p className="HeaderTitle">CINEMATOGRAPHER</p>
+          <p className="HeaderTitle">DIRECTOR</p>
         </div>
         <div id="linkdiv">
           <img className="menucross" src={cross_icon_black} onClick={(e) => this.MenuDisplayNone()}/>

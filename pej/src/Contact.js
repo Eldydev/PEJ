@@ -19,7 +19,7 @@ export const Contact = () => {
         console.log(result.text);
         if (result.text === "OK") {
           var ok = document.getElementById("Popup")
-          ok.style.display ="block"
+          ok.style.display = "block"
         }
       }, (error) => {
         console.log(error.text);
@@ -30,42 +30,37 @@ export const Contact = () => {
     <div>
       <Header />
       <form ref={form} onSubmit={sendEmail} class="form">
-      <div className="formdiv">
-        <div className="formbox">
-          <div className="ownerdiv">
-            <div>
-              <p className="infobox">P.E. JOUBERT</p>
-              <p className="infobox">pejoubert@gmail.com</p>
-            </div>
-            <div>
-              <a
-                href="https://www.instagram.com/p.e.joubert/" >
-                <img className='logo' src={logo_insta_black} />
-              </a>
-              <a
-                href="https://vimeo.com/pejoubert" >
-                <img className='logo' src={logo_vimeo_black} />
-              </a>
-            </div>
-          </div>
-          <div className="inputdiv">
-            <div>
-              <input className="input" type="text" name="from_name" placeholder="Votre nom" />
-              <input className="input" type="email" name="from_email" placeholder="Votre mail" />
-              <input className="input" type="email" name="from_email" placeholder="Objet" />
-            </div>
-            <div>
-              <textarea name="message" placeholder="Votre Message" />
-              <input class="button" type="submit" value="Send" 
-              style={{
-                width: "60px",
-                marginLeft: "70%",
-                marginTop: "20px",
-            }}/>
+        <div className="formdiv">
+          <div className="formbox">
+            <p id="contactcatch">DROP ME A LINE</p>
+            <div className="inputdiv">
+              <div className='inputbox'>
+                <input className="input" type="text" name="from_name" placeholder="Votre nom" />
+                <input className="input" type="email" name="from_email" placeholder="Votre mail" />
+                <input className="input" type="email" name="from_email" placeholder="Objet" />
+              </div>
+              <div className='textbox'>
+                <textarea name="message" placeholder="Votre Message" />
+                <input class="button" type="submit" value="Send"
+                  style={{
+                    width: "60px",
+                    marginLeft: "86%",
+                    marginTop: "20px",
+                  }} />
+              </div>            
+              <div className="logobox">
+                <a
+                  href="https://www.instagram.com/p.e.joubert/" >
+                  <img className='Conlogo' src={logo_insta_black} />
+                </a>
+                <a
+                  href="https://vimeo.com/pejoubert" >
+                  <img className='Conlogo' src={logo_vimeo_black} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
       </form>
       <ContactPopup />
     </div>
