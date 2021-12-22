@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import emailjs from 'emailjs-com';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Logo from './Components/Logo';
 import ContactPopup from './Components/ContactPopup';
 import logo_insta_black from './IMG/logo_insta_black.png'
 import logo_vimeo_black from './IMG/logo_vimeo_black.png'
@@ -29,39 +30,45 @@ export const Contact = () => {
   return (
     <div>
       <Header />
-      <form ref={form} onSubmit={sendEmail} class="form">
-        <div className="formdiv">
-          <div className="formbox">
-            <p id="contactcatch">DROP ME A LINE</p>
-            <div className="inputdiv">
-              <div className='inputbox'>
-                <input className="input" type="text" name="from_name" placeholder="Votre nom" />
-                <input className="input" type="email" name="from_email" placeholder="Votre mail" />
-                <input className="input" type="email" name="from_email" placeholder="Objet" />
-              </div>
-              <div className='textbox'>
-                <textarea name="message" placeholder="Votre Message" />
-                <input class="button" type="submit" value="Send"
-                  style={{
-                    width: "60px",
-                    marginLeft: "86%",
-                    marginTop: "20px",
-                  }} />
-              </div>            
-              <div className="logobox">
-                <a
-                  href="https://www.instagram.com/p.e.joubert/" >
-                  <img className='Conlogo' src={logo_insta_black} />
-                </a>
-                <a
-                  href="https://vimeo.com/pejoubert" >
-                  <img className='Conlogo' src={logo_vimeo_black} />
-                </a>
+      <div style={{
+        display: "flex",
+        justifyContent: "space-around"
+      }}>
+        <Logo />
+        <form ref={form} onSubmit={sendEmail} class="form">
+          <div className="formdiv">
+            <div className="formbox">
+              <p id="contactcatch">DROP ME A LINE</p>
+              <div className="inputdiv">
+                <div className='inputbox'>
+                  <input className="input" type="text" name="from_name" placeholder="Votre nom" />
+                  <input className="input" type="email" name="from_email" placeholder="Votre mail" />
+                  <input className="input" type="email" name="from_email" placeholder="Objet" />
+                </div>
+                <div className='textbox'>
+                  <textarea name="message" placeholder="Votre Message" />
+                  <input class="button" id="ContactButton" type="submit" value="Send"
+                    style={{
+                      width: "60px",
+                      marginTop: "20px",
+                    }} />
+                </div>
+                <div className="logobox">
+                  <a
+                    href="https://www.instagram.com/p.e.joubert/" >
+                    <img className='Conlogo' src={logo_insta_black} />
+                  </a>
+                  <a
+                    href="https://vimeo.com/pejoubert" >
+                    <img className='Conlogo' src={logo_vimeo_black} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
+
       <ContactPopup />
     </div>
   );

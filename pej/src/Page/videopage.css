@@ -1,9 +1,16 @@
 .video {
     /*border: solid 2px red;*/
-    margin-left: 17%;
-    width: 65%;
+    width: 95%;
     height: 600px;
     margin-top: 10px;
+}
+
+#videoagaag {
+    width: 105%;
+}
+
+#videoagaag2 {
+    width: 105%;
 }
 
 .videogrief {
@@ -15,8 +22,7 @@
 
 .videogriefbox {
     /*border: solid 2px orangered;*/
-    margin-left: 17%;
-    width: 65%;
+    width: 80%;
     margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -35,6 +41,7 @@
 .subvideotitle {
     /*border: 2px solid blue;*/
     text-align: center;
+    margin-right: 5%;
     font-size: 15px;
     font-weight: bold;
     color: white;
@@ -96,9 +103,22 @@
 
 @media screen and (min-width: 200px) and (max-width: 500px) {
     .video {
-        width: 98%;   
-        margin-left: 1%;
+        width: 85%;   
+        margin-left: 2%;
+        margin-right: 2%;
         height: 200px;
+    }
+
+    #videoagaag {
+        width: 100%;
+    }
+
+    #videoagaag2 {
+        width: 100%;
+    }
+
+    #videoalb {
+        width: 96%;
     }
 
     .prizebox {
@@ -112,13 +132,109 @@
     }
 
     .videogriefbox {
-        width: 98%;
+        width: 90%;
         margin-left: 1%;
     }
 
     .videogrief {
-        width: 100%;
+        width: 96%;
         height: 200px;
+    }
+    .videotitle {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1200px) {
+    .video {
+        width: 85%;
+        margin-left: 2%;
+        margin-right: 2%;
+        top: -20px;
+        position: relative;
+    }
+
+    #videoagaag {
+        width: 100%;
+        margin-top: -100px;
+    }
+
+    #videoagaag2 {
+        width: 100%;
+        margin-top: -100px;
+    }
+
+    #videoalb {
+        width: 96%;
+    }
+
+    .prizebox {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .prize {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .videogriefbox {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .videogrief {
+        width: 96%;
+    }
+    .videotitle {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1000px) {
+    .video {
+        width: 85%;
+        margin-left: 2%;
+        margin-right: 2%;
+        top: -80px;
+        position: relative;
+    }
+
+    #videoagaag {
+        width: 100%;
+        margin-top: -100px;
+    }
+
+    #videoagaag2 {
+        width: 100%;
+        margin-top: -80px;
+    }
+
+    #videoalb {
+        width: 96%;
+        margin-top: 80px;
+    }
+
+    .prizebox {
+        width: 98%;
+        margin-left: 1%;
+    }
+
+    .prize {
+        width: 40%;
+        margin: 10px;
+    }
+
+    .videogriefbox {
+        width: 90%;
+        margin-left: 1%;
+    }
+
+    .videogrief {
+        width: 96%;
+    }
+    .videotitle {
+        margin-left: 0px;
     }
 }
 

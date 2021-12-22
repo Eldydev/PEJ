@@ -86,4 +86,61 @@ form {
     filter: invert(100%);
 }
 
+@media screen and (min-width: 200px) and (max-width: 500px) {
+    .inputdiv {
+        display: flex;
+        flex-direction: column;
+    }
+    .formdiv {
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+    }
+    .inputbox {
+        width: 100%;
+    
+    }
+    .textbox {
+        width: 96%;
+    }
+
+    #ContactButton {
+        margin-left: 36%;
+    }
+
+    .logobox {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 1200px) {
+
+    .formdiv {
+        height: 250px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 90%;
+        margin-left: 5%;
+    }
+    .inputbox {
+        width: 100%;
+    
+    }
+    .textbox {
+        width: 96%;
+    }
+
+    #ContactButton {
+        margin-left: 75%;
+    }
+
+}
+
 

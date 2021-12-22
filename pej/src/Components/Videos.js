@@ -6,6 +6,23 @@ import { Player, ControlBar, BigPlayButton } from 'video-react';
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import Hammer from "rc-hammerjs";
 
+import Logo from './Logo';
+
+import EXTRAITADIDAS from "../Extraits/EXTRAITADIDAS.mp4"
+import EXTRAITAGAAG from "../Extraits/EXTRAITAGAAG.mp4"
+import EXTRAITALB from "../Extraits/EXTRAITALB.mp4"
+import EXTRAITCIL from "../Extraits/EXTRAITCIL.mp4"
+import EXTRAITCUBE from "../Extraits/EXTRAITCUBE.mp4"
+import EXTRAITELEVEN01 from "../Extraits/EXTRAITELEVEN01.mp4"
+import EXTRAITGRIEFJOY from "../Extraits/EXTRAITGRIEFJOY.mp4"
+import EXTRAITILEK from "../Extraits/EXTRAITILEK.mp4"
+import EXTRAITJuvenilesWAY from "../Extraits/EXTRAITJuvenilesWAY.mp4"
+import EXTRAITLD from "../Extraits/EXTRAITLD.mp4"
+import EXTRAITMINEO from "../Extraits/EXTRAITMINEO.mp4"
+import EXTRAITPGREEN from "../Extraits/EXTRAITPGREEN.mp4"
+import EXTRAITTIKTOK from "../Extraits/EXTRAITTIKTOK.mp4"
+import EXTRAITUNDERWORLD from "../Extraits/EXTRAITUNDERWORLD.mp4"
+
 import extrait_adidas from ".././Preview/extrait_adidas.mp4"
 import extrait_agaag from ".././Preview/extrait_agaag.mp4"
 import extrait_alb from ".././Preview/extrait_alb.mp4"
@@ -58,110 +75,86 @@ class Videos extends Component {
             videos: [
                 {
                     id: "prev1",
-                    src: extrait_adidas,
+                    src: EXTRAITADIDAS,
                     img: adidas_image,
                     url: "/adidas"
                 },
                 {
                     id: "prev2",
-                    src: extrait_agaag,
+                    src: EXTRAITAGAAG,
                     img: agaag_image,
                     url: "/agirlandagun"
                 },
                 {
                     id: "prev3",
-                    src: extrait_alb,
+                    src: EXTRAITALB,
                     img: alb_image,
                     url: "/alb"
                 },
                 {
                     id: "prev4",
-                    src: extrait_cil,
+                    src: EXTRAITCIL,
                     img: cil_image,
                     url: "/cil"
 
                 },
                 {
                     id: "prev5",
-                    src: extrait_cube,
+                    src: EXTRAITCUBE,
                     img: the_cube_image,
                     url: "/thecube"
                 },
                 {
                     id: "prev6",
-                    src: extrait_eleven01,
+                    src: EXTRAITELEVEN01,
                     img: eleven_image,
                     url: "/eleven1"
                 },
                 {
-                    id: "prev7",
-                    src: extrait_eleven02,
-                    img: zoe_image,
-                    url: "/eleven2"
-                },
-                {
-                    id: "prev8",
-                    src: extrait_eleven03,
-                    img: richards_image,
-                    url: "/eleven3"
-                },
-                {
                     id: "prev9",
-                    src: extrait_grieffjoy,
+                    src: EXTRAITGRIEFJOY,
                     img: griefjoy_image,
                     url: "/griefjoy"
                 },
                 {
-                    id: "prev10",
-                    src: extrait_hanoi,
-                    img: hanoi_image,
-                    url: "/hanoi"
-                },
-                {
                     id: "prev11",
-                    src: extrait_ilek,
+                    src: EXTRAITILEK,
                     img: ilek_image,
                     url: "/ilek"
                 },
                 {
-                    id: "prev12",
-                    src: extrait_Juvenilestour,
-                    img: juveniles_tour_image,
-                    url: "/juvenilestour"
-                },
-                {
                     id: "prev13",
-                    src: extrait_Juvenilesway,
+                    src: EXTRAITJuvenilesWAY,
                     img: juveniles_image,
                     url: "/juvenilesway"
                 },
                 {
                     id: "prev14",
-                    src: extrait_ld,
+                    src: EXTRAITLD,
                     img: ld_image,
                     url: "/ld"
                 },
                 {
                     id: "prev15",
-                    src: extrait_mineo,
+                    src: EXTRAITMINEO,
                     img: mineao_image,
                     url: "/mineo"
                 },
                 {
                     id: "prev16",
-                    src: extrait_pgreen,
+                    src: EXTRAITPGREEN,
                     img: pgreen_image,
                     url: "/pgreen"
                 },
                 {
                     id: "prev17",
-                    src: extrait_tiktok,
+                    src: EXTRAITTIKTOK,
                     img: tiktok_image,
                     url: "/tiktok"
                 },
                 {
                     id: "prev18",
-                    src: extrait_underworld,
+                    src: EXTRAITUNDERWORLD,
                     img: underworld_image,
                     url: "/underworld"
                 },
@@ -215,7 +208,7 @@ class Videos extends Component {
             console.log("handletouchend")
             video.pause()
             video.load()
-            this.setState({ url: ""})
+            this.setState({ url: "" })
             this.setState({ VideoPlay: false })
         }
 
@@ -247,28 +240,33 @@ class Videos extends Component {
 
     handleDoubleTap(url) {
         console.log('doubletap', url);
-        this.setState({ url: url})
-        this.setState({ redirect: true})
+        this.setState({ url: url })
+        this.setState({ redirect: true })
     }
 
     render() {
         console.log('width :', this.state.width, 'height  :', this.state.height)
         if (this.state.redirect === true) {
-            return <Redirect to={this.state.url}/>;
-          }
+            return <Redirect to={this.state.url} />;
+        }
         return (
-            <div className="videobox">
-                {this.state.videos.map((data, i) => {
-                    if (this.state.width < 500) {
-                        return (
-                            <div className="homevideo"
-                                key={i}
-                                id={data.id}
+            <div style={{
+                display: "flex",
+                justifyContent: "space-around"
+            }}>
+                <Logo />
+                <div className="videobox">
+                    {this.state.videos.map((data, i) => {
+                        if (this.state.width < 500) {
+                            return (
+                                <div className="homevideo"
+                                    key={i}
+                                    id={data.id}
 
-                            >
-                                <Hammer
-                                    onTap={e => this.handleTap(data.id)}
-                                    onDoubleTap={e => this.handleDoubleTap(data.url)}>
+                                >
+                                    <Hammer
+                                        onTap={e => this.handleTap(data.id)}
+                                        onDoubleTap={e => this.handleDoubleTap(data.url)}>
                                         <Player
                                             fluid
                                             src={data.src}
@@ -278,20 +276,20 @@ class Videos extends Component {
                                             <ControlBar autoHide={false} className="controlbar" />
                                             <BigPlayButton position="center" className="playbutton" />
                                         </Player>
-                                </Hammer>
-                            </div>
-                        )
+                                    </Hammer>
+                                </div>
+                            )
 
-                    }
-                    else {
-                        return (
-                            <div className="homevideo"
-                                key={i}
-                                id={data.id}
+                        }
+                        else {
+                            return (
+                                <div className="homevideo"
+                                    key={i}
+                                    id={data.id}
 
-                                onMouseEnter={e => this.PlayVideo(data.id)}
-                                onMouseLeave={e => this.StopVideo(data.id)}
-                            >
+                                    onMouseEnter={e => this.PlayVideo(data.id)}
+                                    onMouseLeave={e => this.StopVideo(data.id)}
+                                >
                                     <a href={data.url}>
                                         <Player
                                             fluid
@@ -303,12 +301,13 @@ class Videos extends Component {
                                             <BigPlayButton position="center" className="playbutton" />
                                         </Player>
                                     </a>
-                            </div>
+                                </div>
 
-                        )
-                    }
+                            )
+                        }
 
-                })}
+                    })}
+                </div>
             </div>
         );
     }

@@ -6,6 +6,7 @@
 
 .videobox {
     /*border: solid 2px black;*/
+    width: 95%;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -15,8 +16,8 @@
     display: none;
 }
 
-@media screen and (min-width: 200px) and (max-width: 500px) {
+@media screen and (min-width: 200px) and (max-width: 1200px) {
     .homevideo {
-        width: 98%;
+        width: 90%;
     }
 }

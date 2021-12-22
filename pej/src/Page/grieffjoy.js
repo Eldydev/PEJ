@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '.././Components/Header';
 import Footer from '.././Components/Footer';
+import Logo from '../Components/Logo';
 import ReactPlayer from "react-player"
 import { Player, ControlBar, BigPlayButton } from 'video-react';
 
@@ -20,36 +21,41 @@ class Grieffjoy extends Component {
             <div>
                 <Header />
                 <p className="videotitle">Grieffjoy</p>
-                <div className="videogriefbox">
-                    <div className="videogrief">
-                        <ReactPlayer
-                            controls="true"
-                            className='react-player'
-                            url='https://www.youtube.com/watch?v=kvOmb2cvtls'
-                            height='100%'
-                            width='100%'
-                        />
-                    </div>
-                    <div className="videogrief">
-                        <ReactPlayer
-                            controls="true"
-                            className='react-player'
-                            url='https://vimeo.com/187084943'
-                            height='100%'
-                            width='100%'
-                        />
-                    </div>
-                    <div className="videogrief">
-                        <ReactPlayer
-                            controls="true"
-                            className='react-player'
-                            url='https://vimeo.com/187083822'
-                            height='100%'
-                            width='100%'
-                        />
+                <div style={{
+                    display: "flex",
+                    justifyContent: "space-around"
+                }}>
+                    <Logo />
+                    <div className="videogriefbox">
+                        <div className="videogrief">
+                            <ReactPlayer
+                                controls="true"
+                                className='react-player'
+                                url='https://www.youtube.com/watch?v=kvOmb2cvtls'
+                                height='100%'
+                                width='100%'
+                            />
+                        </div>
+                        <div className="videogrief">
+                            <ReactPlayer
+                                controls="true"
+                                className='react-player'
+                                url='https://vimeo.com/187084943'
+                                height='100%'
+                                width='100%'
+                            />
+                        </div>
+                        <div className="videogrief">
+                            <ReactPlayer
+                                controls="true"
+                                className='react-player'
+                                url='https://vimeo.com/187083822'
+                                height='100%'
+                                width='100%'
+                            />
+                        </div>
                     </div>
                 </div>
-
                 <div className="videodesc">
                     <div className="videodescbox1">
                         <p>Directed by</p>

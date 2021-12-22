@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '.././Components/Header';
 import Footer from '.././Components/Footer';
+import Logo from '../Components/Logo';
 import ReactPlayer from "react-player"
 import { Player, ControlBar, BigPlayButton } from 'video-react';
 
@@ -20,17 +21,20 @@ class Cil extends Component {
             <div>
                 <Header />
                 <p className="videotitle">Curfew in LowpolyVille</p>
-                <div className="video">
-                    <ReactPlayer
-                        controls="true"
-                        className='react-player'
-                        url='https://vimeo.com/549126016'
-                        height='100%'
-                        width='100%'
-                    />
-                </div>
-                <div className="videodesc">
-
+                <div style={{
+                    display: "flex",
+                    justifyContent: "space-around"
+                }}>
+                    <Logo />
+                    <div className="video">
+                        <ReactPlayer
+                            controls="true"
+                            className='react-player'
+                            url='https://vimeo.com/549126016'
+                            height='100%'
+                            width='100%'
+                        />
+                    </div>
                 </div>
                 <Footer />
             </div>

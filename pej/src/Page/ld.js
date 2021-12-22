@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '.././Components/Header';
 import Footer from '.././Components/Footer';
+import Logo from '../Components/Logo';
 import ReactPlayer from "react-player"
 import { Player, ControlBar, BigPlayButton } from 'video-react';
 
@@ -46,18 +47,24 @@ class Ld extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">ld</p>
-                <div className="video">
-                    <ReactPlayer
-                        controls="true"
-                        className='react-player'
-                        url='https://vimeo.com/186116478'
-                        height='100%'
-                        width='100%'
-                    />
+                <p className="videotitle">Louise Delage</p>
+                <div style={{
+                    display: "flex",
+                    justifyContent: "space-around"
+                }}>
+                    <Logo />
+                    <div className="video">
+                        <ReactPlayer
+                            controls="true"
+                            className='react-player'
+                            url='https://vimeo.com/186116478'
+                            height='100%'
+                            width='100%'
+                        />
+                    </div>
                 </div>
                 <div className="videodesc">
-                <div className="videodescbox1">
+                    <div className="videodescbox1">
                         <p>Directed by</p>
                         <p>AGENCY</p>
                         <p>Production</p>
@@ -69,16 +76,16 @@ class Ld extends Component {
                     </div>
                 </div>
                 <div className="prizebox">
-                {this.state.prize.map((data, i) => {
-                    return (
-                        <div className="prize" 
-                            key={i} 
+                    {this.state.prize.map((data, i) => {
+                        return (
+                            <div className="prize"
+                                key={i}
                             >
-                            <img src={data.img}/>
-                        </div>
-                    )
-                })}
-            </div>
+                                <img src={data.img} />
+                            </div>
+                        )
+                    })}
+                </div>
                 <Footer />
             </div>
         );
