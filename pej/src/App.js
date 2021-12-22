@@ -34,7 +34,7 @@ function App() {
        <BrowserRouter>
         <Switch>
         <Route exact path="/">
-            <Home />
+            <Director />
           </Route>
           <Route path="/contact">
             <Contact />
