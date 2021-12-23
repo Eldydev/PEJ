@@ -218,13 +218,11 @@ class Videos extends Component {
         this.props.history.push(url)
     }
 
-    handleTap(id) {
-        console.log('tap')
+    handlePress(id) {
+        console.log('Press')
         var VideoPlay = this.state.VideoPlay
         if (VideoPlay === false) {
             var video = document.getElementById(id).children[0].children[0]
-            console.log("in :" + id)
-            console.log("handletouchstart")
             video.play()
             this.setState({ VideoPlay: true })
         }
@@ -236,6 +234,10 @@ class Videos extends Component {
             video.load()
             this.setState({ VideoPlay: false })
         }
+    }
+
+    handlePressUp(id){
+        console.log('PressUp')
     }
 
     handleDoubleTap(url) {
@@ -262,10 +264,11 @@ class Videos extends Component {
                                 <div className="homevideo"
                                     key={i}
                                     id={data.id}
+                                    onTouchStart={e => this.handlePress(data.id)}
 
                                 >
                                     <Hammer
-                                        OnTouchStart={e => this.handleTap(data.id)}
+
                                         onTap={e => this.handleDoubleTap(data.url)}>
                                         <Player
                                             fluid
