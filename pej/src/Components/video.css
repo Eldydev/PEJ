@@ -16,6 +16,10 @@
     display: none;
 }
 
+.video-react .video-react-bezel {
+    display: none;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1200px) {
     .homevideo {
         width: 90%;
