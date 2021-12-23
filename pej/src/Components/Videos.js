@@ -265,13 +265,14 @@ class Videos extends Component {
 
                                 >
                                     <Hammer
-                                        onTap={e => this.handleTap(data.id)}
-                                        onDoubleTap={e => this.handleDoubleTap(data.url)}>
+                                        OnTouchStart={e => this.handleTap(data.id)}
+                                        onTap={e => this.handleDoubleTap(data.url)}>
                                         <Player
                                             fluid
                                             src={data.src}
                                             loop={true}
                                             poster={data.img}
+                                            playsInline={true}
                                         >
                                             <ControlBar autoHide={false} className="controlbar" />
                                             <BigPlayButton position="center" className="playbutton" />
@@ -296,6 +297,7 @@ class Videos extends Component {
                                             src={data.src}
                                             loop={true}
                                             poster={data.img}
+                                            playsInline={true}
                                         >
                                             <ControlBar autoHide={false} className="controlbar" />
                                             <BigPlayButton position="center" className="playbutton" />
