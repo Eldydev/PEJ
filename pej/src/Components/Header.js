@@ -21,9 +21,28 @@ class Header extends Component {
       gif: Gif01,
       director: Director01,
       motion: Motion01,
-      contact: Contact01
+      contact: Contact01,
+      loc: ""
     };
   }
+
+  componentDidMount() {
+    var loc = window.location.pathname
+    this.setState({loc: loc})
+    console.log("loc : ", loc )
+    if (loc === '/director'){
+      this.setState({ director: Director02 })
+    }
+    if (loc === '/gif'){
+      this.setState({ gif: Gif02 })
+    }
+    if (loc === '/motiondesign'){
+      this.setState({ motion: Motion02 })
+    }
+    if (loc === '/contact'){
+      this.setState({ contact: Contact02 })
+    }
+}
 
   MenuDisplay() {
     var menu = document.getElementById("linkdiv")
@@ -37,35 +56,60 @@ class Header extends Component {
   }
 
   RolloverGif() {
-    this.setState({ gif: Gif02 })
+    
+    var loc = this.state.loc
+    if (loc != '/gif'){
+      this.setState({ gif: Gif02 })
+    }
   }
 
   RolloverGif2() {
-    this.setState({ gif: Gif01 })
+    var loc = this.state.loc
+    if (loc != '/gif'){
+      this.setState({ gif: Gif01 })
+    }
   }
 
   RolloverDirector() {
-    this.setState({ director: Director02 })
+    var loc = this.state.loc
+    if (loc != '/director'){
+      this.setState({ director: Director02 })
+    }
   }
 
   RolloverDirector2() {
-    this.setState({ director: Director01 })
+    var loc = this.state.loc
+    if (loc != '/director'){
+      this.setState({ director: Director01 })
+    }
   }
 
   RolloverContact() {
-    this.setState({ contact: Contact02 })
+    var loc = this.state.loc
+    if (loc != '/contact'){
+      this.setState({ contact: Contact02 })
+    }
   }
 
   RolloverContact2() {
-    this.setState({ contact: Contact01 })
+    var loc = this.state.loc
+    if (loc != '/contact'){
+      this.setState({ contact: Contact01 })
+    }
   }
 
   RolloverMotion() {
-    this.setState({ motion: Motion02 })
+    var loc = this.state.loc
+    if (loc != '/motiondesign'){
+      this.setState({ motion: Motion02 })
+    } 
   }
 
   RolloverMotion2() {
-    this.setState({ motion: Motion01 })
+    var loc = this.state.loc
+    if (loc != '/motiondesign'){
+      this.setState({ motion: Motion01 })
+    }
   }
 
 
