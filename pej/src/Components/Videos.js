@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Vimeo from '@u-wave/react-vimeo';
 import ReactPlayer from "react-player";
 import { Redirect } from 'react-router'
-import { Player, ControlBar, BigPlayButton } from 'video-react';
+import { Player, ControlBar, BigPlayButton, LoadingSpinner } from 'video-react';
 import { useLocation, Link, useNavigate } from "react-router-dom";
 import Hammer from "rc-hammerjs";
 
