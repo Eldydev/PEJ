@@ -74,35 +74,16 @@ class Videos extends Component {
         this.state = {
             videos: [
                 {
-                    id: "prev1",
-                    src: EXTRAITADIDAS,
-                    img: adidas_image,
-                    url: "/adidas"
-                },
-                {
                     id: "prev2",
                     src: EXTRAITAGAAG,
                     img: agaag_image,
                     url: "/agirlandagun"
                 },
                 {
-                    id: "prev3",
-                    src: EXTRAITALB,
-                    img: alb_image,
-                    url: "/alb"
-                },
-                {
                     id: "prev4",
                     src: EXTRAITCIL,
                     img: cil_image,
                     url: "/cil"
-
-                },
-                {
-                    id: "prev5",
-                    src: EXTRAITCUBE,
-                    img: the_cube_image,
-                    url: "/thecube"
                 },
                 {
                     id: "prev6",
@@ -111,10 +92,22 @@ class Videos extends Component {
                     url: "/eleven1"
                 },
                 {
-                    id: "prev9",
-                    src: EXTRAITGRIEFJOY,
-                    img: griefjoy_image,
-                    url: "/griefjoy"
+                    id: "prev1",
+                    src: EXTRAITADIDAS,
+                    img: adidas_image,
+                    url: "/adidas"
+                },
+                {
+                    id: "prev5",
+                    src: EXTRAITCUBE,
+                    img: the_cube_image,
+                    url: "/thecube"
+                },
+                {
+                    id: "prev3",
+                    src: EXTRAITALB,
+                    img: alb_image,
+                    url: "/alb"
                 },
                 {
                     id: "prev11",
@@ -123,22 +116,16 @@ class Videos extends Component {
                     url: "/ilek"
                 },
                 {
+                    id: "prev9",
+                    src: EXTRAITGRIEFJOY,
+                    img: griefjoy_image,
+                    url: "/griefjoy"
+                },
+                {
                     id: "prev13",
                     src: EXTRAITJuvenilesWAY,
                     img: juveniles_image,
                     url: "/juvenilesway"
-                },
-                {
-                    id: "prev14",
-                    src: EXTRAITLD,
-                    img: ld_image,
-                    url: "/ld"
-                },
-                {
-                    id: "prev15",
-                    src: EXTRAITMINEO,
-                    img: mineao_image,
-                    url: "/mineo"
                 },
                 {
                     id: "prev16",
@@ -147,10 +134,22 @@ class Videos extends Component {
                     url: "/pgreen"
                 },
                 {
+                    id: "prev15",
+                    src: EXTRAITMINEO,
+                    img: mineao_image,
+                    url: "/mineo"
+                },
+                {
                     id: "prev17",
                     src: EXTRAITTIKTOK,
                     img: tiktok_image,
                     url: "/tiktok"
+                },
+                {
+                    id: "prev14",
+                    src: EXTRAITLD,
+                    img: ld_image,
+                    url: "/ld"
                 },
                 {
                     id: "prev18",

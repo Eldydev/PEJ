@@ -32,10 +32,10 @@ export const Contact = () => {
       <Header />
       <div style={{
         display: "flex",
-        justifyContent: "space-around"
+        justifyContent: "space-between"
       }}>
         <Logo />
-        <form ref={form} onSubmit={sendEmail} class="form">
+        <form ref={form} onSubmit={sendEmail} class="forma">
           <div className="formdiv">
             <div className="formbox">
               <p id="contactcatch">DROP ME A LINE</p>

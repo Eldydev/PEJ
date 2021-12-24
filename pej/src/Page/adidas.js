@@ -30,7 +30,7 @@ class Adidas extends Component {
                         <ReactPlayer
                             controls="true"
                             className='react-player'
-                            url='https://vimeo.com/259652133'
+                            url='https://vimeo.com/239351268'
                             height='100%'
                             width='100%'
                         />
