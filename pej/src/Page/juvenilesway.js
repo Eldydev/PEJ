@@ -20,7 +20,7 @@ class JuvenilesWay extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">juvenilesway</p>
+                <p className="videotitle">Juveniles // we are young</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"

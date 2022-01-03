@@ -20,7 +20,7 @@ class Adidas extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">ADIDAS DRAXLER</p>
+                <p className="videotitle">Adidas</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"

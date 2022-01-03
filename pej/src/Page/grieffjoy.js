@@ -20,7 +20,7 @@ class Grieffjoy extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">Grieffjoy</p>
+                <p className="videotitle">Griefjoy</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"

@@ -20,7 +20,7 @@ class Agaag extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">A GIRL & A GUN</p>
+                <p className="videotitle">A Girl & a Gun</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"
@@ -29,17 +29,6 @@ class Agaag extends Component {
                     <div style={{
                             width: "90%",
                         }}>
-                        <p className="subvideotitle">Teaser</p>
-                        <div className="video" id="videoagaag">
-                            <ReactPlayer
-                                controls="true"
-                                className='react-player'
-                                url='https://vimeo.com/440828751'
-                                height='100%'
-                                width='90%'
-                            />
-                        </div>
-                        <p className="subvideotitle">Film</p>
                         <div className="video" id="videoagaag2">
                             <ReactPlayer
                                 controls="true"

@@ -21,7 +21,7 @@ class Mineo extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">Mineo</p>
+                <p className="videotitle">Mineo // Turn out the light</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"

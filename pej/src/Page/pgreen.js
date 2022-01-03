@@ -20,7 +20,7 @@ class Pgreen extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">pgreen</p>
+                <p className="videotitle">Professor green // Remedy</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"

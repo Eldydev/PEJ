@@ -20,7 +20,7 @@ class Eleven1 extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">Eleven 1</p>
+                <p className="videotitle">Eleven Paris</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"
