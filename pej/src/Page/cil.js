@@ -20,7 +20,7 @@ class Cil extends Component {
         return (
             <div>
                 <Header />
-                <p className="videotitle">Curfew in LowpolyVille</p>
+                <p className="videotitle">CURFEW IN LOWPOLYVILLE</p>
                 <div style={{
                     display: "flex",
                     justifyContent: "space-around"
