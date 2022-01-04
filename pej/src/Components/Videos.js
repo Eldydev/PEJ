@@ -227,21 +227,27 @@ class Videos extends Component {
             VideoPlay.pause()
             VideoPlay.load()
         }
-        var video = document.getElementById(id).children[0].children[0]
-        video.play()
-        this.setState({ VideoPlayId: id })
-        this.setState({ VideoPlay: true })
-    }
-
-    handlePressUp(id) {
-        if(this.state.VideoPlay === true){
-            console.log('PressUp')
-            var VideoPlay = this.state.VideoPlay
+        if(this.state.VideoPlay === false){
             var video = document.getElementById(id).children[0].children[0]
-            console.log("out :" + id)
+            video.play()
+            this.setState({ VideoPlayId: id })
+            this.setState({ VideoPlay: true })
+        }
+        if(this.state.VideoPlay === true){
+            var video = document.getElementById(id).children[0].children[0]
             video.pause()
             video.load()
             this.setState({ VideoPlay: false })
+        }
+
+    }
+
+    handlePressUp(id) {
+        console.log('PressUp')
+        if(this.state.VideoPlay === true){
+            
+            var VideoPlay = this.state.VideoPlay
+
         }
 
     }
@@ -271,9 +277,6 @@ class Videos extends Component {
                                     key={i}
                                     id={data.id}
                                     onTouchStart={e => this.handlePress(data.id)}
-                                    onTouchCancel={e => this.handlePressUp(data.id)}
-                                    onTou
-
                                 >
                                     <Hammer
 
