@@ -17,8 +17,11 @@ class Logo extends Component {
             <div id='LogoPEJ'>
                 <img id="LogoPEJimg" src={Side_logo}
                 />
-                <img id="Menleg" src={mentionlegales}
-                />
+                <a href="https://www.spatiality.fr/" target="_blank">
+                    <img id="Menleg" src={mentionlegales}
+
+                    />
+                </a>
             </div>
         );
     }

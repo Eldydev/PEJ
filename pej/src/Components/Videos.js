@@ -221,23 +221,28 @@ class Videos extends Component {
 
     handlePress(id) {
         console.log('Press')
+        console.log(id)
         var VideoPlayId = this.state.VideoPlayId
-        if ((VideoPlayId != '') && (id != VideoPlayId)) {
+        if ((VideoPlayId !== '') && (id !== VideoPlayId)) {
+            console.log(id, ' ', VideoPlayId)
             var VideoPlay = document.getElementById(VideoPlayId).children[0].children[0]
             VideoPlay.pause()
             VideoPlay.load()
             var video = document.getElementById(id).children[0].children[0]
+            console.log(video)
             video.play()
             this.setState({ VideoPlayId: id })
             this.setState({ VideoPlay: true })
         }
         if(this.state.VideoPlay === false){
+            console.log(id, ' play2')
             var video = document.getElementById(id).children[0].children[0]
             video.play()
             this.setState({ VideoPlayId: id })
             this.setState({ VideoPlay: true })
         }
-        if(this.state.VideoPlay === true){
+        if((this.state.VideoPlay === true) &&(id === VideoPlayId)) {
+            console.log(id, ' stop')
             var video = document.getElementById(id).children[0].children[0]
             video.pause()
             video.load()
