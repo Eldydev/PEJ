@@ -43,7 +43,7 @@ export const Contact = () => {
                 <div className='inputbox'>
                   <input className="input" type="text" name="from_name" placeholder="Votre nom" />
                   <input className="input" type="email" name="from_email" placeholder="Votre mail" />
-                  <input className="input" type="email" name="from_email" placeholder="Objet" />
+                  <input className="input" type="text" name="object" placeholder="Objet" />
                 </div>
                 <div className='textbox'>
                   <textarea name="message" placeholder="Votre Message" />

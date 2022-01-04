@@ -225,6 +225,11 @@ class Videos extends Component {
             video.play()
             this.setState({ VideoPlay: true })
         }
+    }
+
+    handlePressUp(id){
+        console.log('PressUp')
+        var VideoPlay = this.state.VideoPlay
         if (VideoPlay === true) {
             var video = document.getElementById(id).children[0].children[0]
             console.log("out :" + id)
@@ -233,10 +238,6 @@ class Videos extends Component {
             video.load()
             this.setState({ VideoPlay: false })
         }
-    }
-
-    handlePressUp(id){
-        console.log('PressUp')
     }
 
     handleDoubleTap(url) {
@@ -264,6 +265,7 @@ class Videos extends Component {
                                     key={i}
                                     id={data.id}
                                     onTouchStart={e => this.handlePress(data.id)}
+                                    onTouchEnd={e => this.handlePressUp(data.id)}
 
                                 >
                                     <Hammer

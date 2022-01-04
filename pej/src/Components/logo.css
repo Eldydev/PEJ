@@ -1,5 +1,5 @@
 #LogoPEJ {
-    height: 500px;
+    height: 700px;
     width: 50px;
 }
 
@@ -7,10 +7,34 @@
     height: 500px;
 }
 
+#Menleg {
+    height: 200px;
+}
+
+.logotext {
+    transform: rotate(-90deg);
+    color: white;
+    width: 150px;
+    height: 60px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -52px;
+    margin-top: 75px;
+}
+.logotext1 {
+    display: flex;
+}
+
 @media screen and (min-width: 200px) and (max-width: 500px) {
     #LogoPEJ {
         height: 250px;
         width: 25px;
+    }
+
+    #Menleg {
+        height: 100px;
     }
     
     #LogoPEJimg {
