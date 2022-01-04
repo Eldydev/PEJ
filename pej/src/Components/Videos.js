@@ -226,6 +226,10 @@ class Videos extends Component {
             var VideoPlay = document.getElementById(VideoPlayId).children[0].children[0]
             VideoPlay.pause()
             VideoPlay.load()
+            var video = document.getElementById(id).children[0].children[0]
+            video.play()
+            this.setState({ VideoPlayId: id })
+            this.setState({ VideoPlay: true })
         }
         if(this.state.VideoPlay === false){
             var video = document.getElementById(id).children[0].children[0]
