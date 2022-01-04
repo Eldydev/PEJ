@@ -159,6 +159,7 @@ class Videos extends Component {
                 },
             ],
             VideoPlay: false,
+            VideoPlayId: '',
             with: 0,
             height: 0,
             redirect: false,
@@ -199,6 +200,7 @@ class Videos extends Component {
             console.log("in :" + id)
             console.log("handletouchstart")
             video.play()
+            this.setState({ VideoPlayId: id })
             this.setState({ VideoPlay: true })
         }
         if (VideoPlay === true) {
@@ -219,25 +221,29 @@ class Videos extends Component {
 
     handlePress(id) {
         console.log('Press')
-        var VideoPlay = this.state.VideoPlay
-        if (VideoPlay === false) {
-            var video = document.getElementById(id).children[0].children[0]
-            video.play()
-            this.setState({ VideoPlay: true })
+        var VideoPlayId = this.state.VideoPlayId
+        if ((VideoPlayId != '') && (id != VideoPlayId)) {
+            var VideoPlay = document.getElementById(VideoPlayId).children[0].children[0]
+            VideoPlay.pause()
+            VideoPlay.load()
         }
+        var video = document.getElementById(id).children[0].children[0]
+        video.play()
+        this.setState({ VideoPlayId: id })
+        this.setState({ VideoPlay: true })
     }
 
-    handlePressUp(id){
-        console.log('PressUp')
-        var VideoPlay = this.state.VideoPlay
-        if (VideoPlay === true) {
+    handlePressUp(id) {
+        if(this.state.VideoPlay === true){
+            console.log('PressUp')
+            var VideoPlay = this.state.VideoPlay
             var video = document.getElementById(id).children[0].children[0]
             console.log("out :" + id)
-            console.log("handletouchend")
             video.pause()
             video.load()
             this.setState({ VideoPlay: false })
         }
+
     }
 
     handleDoubleTap(url) {
@@ -266,6 +272,7 @@ class Videos extends Component {
                                     id={data.id}
                                     onTouchStart={e => this.handlePress(data.id)}
                                     onTouchEnd={e => this.handlePressUp(data.id)}
+                                    onTou
 
                                 >
                                     <Hammer
