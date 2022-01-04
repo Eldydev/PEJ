@@ -271,7 +271,7 @@ class Videos extends Component {
                                     key={i}
                                     id={data.id}
                                     onTouchStart={e => this.handlePress(data.id)}
-                                    onTouchEnd={e => this.handlePressUp(data.id)}
+                                    onTouchCancel={e => this.handlePressUp(data.id)}
                                     onTou
 
                                 >
