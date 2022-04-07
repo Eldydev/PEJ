@@ -17,13 +17,13 @@ class ContactPopup extends Component {
         return (
             <div id="Popup">
                 <div className="PopupMessage">
-                    <p>MAIL ENVOYE</p>
+                    <p>Votre mail a été envoyé avec succés</p>
                     <Link
                         to={{
                             pathname: '/director'
                         }}
                     >
-                    <button>OK</button>
+                    <button>Retour aux vidéos</button>
                     </Link>
                 </div>
             </div>

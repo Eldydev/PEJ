@@ -22,6 +22,7 @@ import EXTRAITMINEO from "../Extraits/EXTRAITMINEO.mp4"
 import EXTRAITPGREEN from "../Extraits/EXTRAITPGREEN.mp4"
 import EXTRAITTIKTOK from "../Extraits/EXTRAITTIKTOK.mp4"
 import EXTRAITUNDERWORLD from "../Extraits/EXTRAITUNDERWORLD.mp4"
+import EXTRAITDUOLINGO from "../Extraits/EXTRAITDUOLINGO.mp4"
 
 import extrait_adidas from ".././Preview/extrait_adidas.mp4"
 import extrait_agaag from ".././Preview/extrait_agaag.mp4"
@@ -60,6 +61,7 @@ import the_cube_image from ".././Cover/the_cube_image.jpg"
 import tiktok_image from ".././Cover/tiktok_image.jpg"
 import underworld_image from ".././Cover/underworld_image.jpg"
 import zoe_image from ".././Cover/zoe_image.jpg"
+import Duolingo_image from ".././Cover/Duolingo_image.jpg"
 
 
 import './video.css';
@@ -73,6 +75,12 @@ class Videos extends Component {
         super();
         this.state = {
             videos: [
+                {
+                    id: "prev19",
+                    src: EXTRAITDUOLINGO,
+                    img: Duolingo_image,
+                    url: "/duolingo"
+                },
                 {
                     id: "prev2",
                     src: EXTRAITAGAAG,

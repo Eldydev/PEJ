@@ -25,6 +25,7 @@ import Mineo from './Page/mineo';
 import Pgreen from './Page/pgreen';
 import Tiktok from './Page/tiktok';
 import Underworld from './Page/underworld';
+import Duolingo from './Page/duolingo';
 
 import "./App.css"
 
@@ -101,6 +102,9 @@ function App() {
           </Route>
           <Route path="/underworld">
             <Underworld />
+          </Route>
+          <Route path="/duolingo">
+            <Duolingo />
           </Route>
         </Switch>
       </BrowserRouter>
