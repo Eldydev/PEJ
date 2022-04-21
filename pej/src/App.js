@@ -26,6 +26,7 @@ import Pgreen from './Page/pgreen';
 import Tiktok from './Page/tiktok';
 import Underworld from './Page/underworld';
 import Duolingo from './Page/duolingo';
+import Owner from './Components/Owner';
 
 import "./App.css"
 
@@ -34,7 +35,7 @@ function App() {
     <div className="App">
        <BrowserRouter>
         <Switch>
-        <Route exact path="/">
+        <Route exact path="/director">
             <Director />
           </Route>
           <Route path="/contact">
@@ -105,6 +106,9 @@ function App() {
           </Route>
           <Route path="/duolingo">
             <Duolingo />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
       </BrowserRouter>
